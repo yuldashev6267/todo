@@ -1,0 +1,17 @@
+C:\workspace\Todo\Todo.Database\bin\Debug\net6.0\Todo.Database.deps.json
+C:\workspace\Todo\Todo.Database\bin\Debug\net6.0\Todo.Database.dll
+C:\workspace\Todo\Todo.Database\bin\Debug\net6.0\Todo.Database.pdb
+C:\workspace\Todo\Todo.Database\obj\Debug\net6.0\Todo.Database.csproj.AssemblyReference.cache
+C:\workspace\Todo\Todo.Database\obj\Debug\net6.0\Todo.Database.GeneratedMSBuildEditorConfig.editorconfig
+C:\workspace\Todo\Todo.Database\obj\Debug\net6.0\Todo.Database.AssemblyInfoInputs.cache
+C:\workspace\Todo\Todo.Database\obj\Debug\net6.0\Todo.Database.AssemblyInfo.cs
+C:\workspace\Todo\Todo.Database\obj\Debug\net6.0\Todo.Database.csproj.CoreCompileInputs.cache
+C:\workspace\Todo\Todo.Database\obj\Debug\net6.0\Todo.Database.dll
+C:\workspace\Todo\Todo.Database\obj\Debug\net6.0\refint\Todo.Database.dll
+C:\workspace\Todo\Todo.Database\obj\Debug\net6.0\Todo.Database.pdb
+C:\workspace\Todo\Todo.Database\obj\Debug\net6.0\ref\Todo.Database.dll
+C:\workspace\Todo\Todo.Database\bin\Debug\net6.0\Todo.Core.dll
+C:\workspace\Todo\Todo.Database\bin\Debug\net6.0\Todo.Core.pdb
+C:\workspace\Todo\Todo.Database\obj\Debug\net6.0\Todo.Database.csproj.CopyComplete
+C:\workspace\Todo\Todo.Database\bin\Debug\net6.0\Todo.Database.runtimeconfig.json
+C:\workspace\Todo\Todo.Database\obj\Debug\net6.0\Todo.Database.genruntimeconfig.cache

@@ -1,0 +1,17 @@
+C:\workspace\Todo\Todo.Service\bin\Debug\net6.0\Todo.Service.deps.json
+C:\workspace\Todo\Todo.Service\bin\Debug\net6.0\Todo.Service.dll
+C:\workspace\Todo\Todo.Service\bin\Debug\net6.0\Todo.Service.pdb
+C:\workspace\Todo\Todo.Service\bin\Debug\net6.0\Todo.Core.dll
+C:\workspace\Todo\Todo.Service\bin\Debug\net6.0\Todo.Database.dll
+C:\workspace\Todo\Todo.Service\bin\Debug\net6.0\Todo.Core.pdb
+C:\workspace\Todo\Todo.Service\bin\Debug\net6.0\Todo.Database.pdb
+C:\workspace\Todo\Todo.Service\obj\Debug\net6.0\Todo.Service.csproj.AssemblyReference.cache
+C:\workspace\Todo\Todo.Service\obj\Debug\net6.0\Todo.Service.GeneratedMSBuildEditorConfig.editorconfig
+C:\workspace\Todo\Todo.Service\obj\Debug\net6.0\Todo.Service.AssemblyInfoInputs.cache
+C:\workspace\Todo\Todo.Service\obj\Debug\net6.0\Todo.Service.AssemblyInfo.cs
+C:\workspace\Todo\Todo.Service\obj\Debug\net6.0\Todo.Service.csproj.CoreCompileInputs.cache
+C:\workspace\Todo\Todo.Service\obj\Debug\net6.0\Todo.Service.csproj.CopyComplete
+C:\workspace\Todo\Todo.Service\obj\Debug\net6.0\Todo.Service.dll
+C:\workspace\Todo\Todo.Service\obj\Debug\net6.0\refint\Todo.Service.dll
+C:\workspace\Todo\Todo.Service\obj\Debug\net6.0\Todo.Service.pdb
+C:\workspace\Todo\Todo.Service\obj\Debug\net6.0\ref\Todo.Service.dll
