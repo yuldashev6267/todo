@@ -8,13 +8,15 @@ namespace Todo.Service.Services
 { 
         public interface ITodo
         {
-            AddTodoResult AddTodo(AddTodoModel model);
-            GetTodoResult GetTodo(long id);
-            DeleteTodoResult DeleteTodo(long id);
-            GetAllResult GetAll(GetAllModel model);
-            RemoveTagFromTodoResult RemoveTagFromTodo(RemoveTagFromTodoModel model);                                                                                                       
-            SearchTodoResult SearchTodo(string text);
-            EditTodoResult EditTodo(EditTodoModel moEditTodoModeldel);
+            Task<AddTodoResult> AddTodo(AddTodoModel model);
+            Task<GetTodoResult> GetTodo(long id);
+            Task<DeleteTodoResult> DeleteTodo(long id);
+            Task<GetAllResult> GetAll(GetAllModel model);
+            Task<GetAllCountResult> GetCount(GetAllCountModel model);
+            Task<RemoveTagFromTodoResult> RemoveTagFromTodo(RemoveTagFromTodoModel model);                                                                                                       
+            Task<SearchTodoResult> SearchTodo(string text);
+            Task<EditTodoResult> EditTodo(EditTodoModel model);
+            Task<CompletedTodoResult> CompletedTodo(long id);
         }
 
         public class TodoService : ITodo
@@ -29,7 +31,7 @@ namespace Todo.Service.Services
                 _tags = tags;
             }
             
-            public AddTodoResult AddTodo(AddTodoModel model)
+            public async Task<AddTodoResult> AddTodo(AddTodoModel model)
             {
                 var result = new AddTodoResult();
 
@@ -83,7 +85,7 @@ namespace Todo.Service.Services
                     }
                     
                     _dbContext.Todos.Add(todoEntity);
-                    _dbContext.SaveChanges();
+                    await _dbContext.SaveChangesAsync();
 
                     #endregion
 
@@ -99,13 +101,13 @@ namespace Todo.Service.Services
                 return result;
             }
 
-            public GetTodoResult GetTodo(long id)
+            public async Task<GetTodoResult> GetTodo(long id)
             {
                 var result = new GetTodoResult();
 
                 try
                 {
-                    var todo = _dbContext.Todos.FirstOrDefault(t => !t.IsDeleted && t.Id == id);
+                    var todo = await _dbContext.Todos.FirstOrDefaultAsync(t => !t.IsDeleted && t.Id == id);
                     if (todo == null)
                     {
                         result.NotFound = true;
@@ -123,7 +125,7 @@ namespace Todo.Service.Services
                 return result;
             }
 
-            public DeleteTodoResult DeleteTodo(long id)
+            public async Task<DeleteTodoResult> DeleteTodo(long id)
             {
                 var result = new DeleteTodoResult();
 
@@ -142,7 +144,7 @@ namespace Todo.Service.Services
                     todo.DeletedAt = DateTime.Now;
 
                     _dbContext.Todos.Update(todo);
-                    _dbContext.SaveChanges();
+                     await  _dbContext.SaveChangesAsync();
                     
                     result.Todo = todo;
                     result.Success = true;
@@ -156,7 +158,7 @@ namespace Todo.Service.Services
                 return result;
             }
 
-            public EditTodoResult EditTodo(EditTodoModel model)
+            public async Task<EditTodoResult> EditTodo(EditTodoModel model)
             {
                 var result = new EditTodoResult();
 
@@ -182,7 +184,7 @@ namespace Todo.Service.Services
 
                 try
                 {
-                    var todo = _dbContext.Todos.Where(t => t.Id.Equals(model.Id)).FirstOrDefault();
+                    var todo = await _dbContext.Todos.Where(t => t.Id.Equals(model.Id)).FirstOrDefaultAsync();
 
                     if (todo == null)
                         result.NotFound = true;
@@ -199,7 +201,7 @@ namespace Todo.Service.Services
                         todo.Priority = model.Priority.Value;
                    
                     _dbContext.Todos.Update(todo);
-                    _dbContext.SaveChanges();
+                   await _dbContext.SaveChangesAsync();
 
                     result.Success = true;
                     result.Todo = todo;
@@ -212,7 +214,7 @@ namespace Todo.Service.Services
                 return result;
             }
 
-            public GetAllResult GetAll(GetAllModel model)
+            public async Task<GetAllResult> GetAll(GetAllModel model)
             {
                 var result = new GetAllResult();
 
@@ -237,7 +239,7 @@ namespace Todo.Service.Services
                         query = query.Take(Math.Max(1, model.Limit.Value));
                     
                     result.Success = true;
-                    result.Todos = query.AsNoTracking().ToList();
+                    result.Todos = await query.AsNoTracking().ToListAsync();
 
                 }
                 catch (Exception e)
@@ -248,7 +250,36 @@ namespace Todo.Service.Services
                 return result;
             }
 
-            public RemoveTagFromTodoResult RemoveTagFromTodo(RemoveTagFromTodoModel model)
+            public async Task<GetAllCountResult> GetCount(GetAllCountModel model)
+            {
+                var result = new GetAllCountResult();
+                
+                try
+                {
+                    var query = _dbContext.Todos.Where(x=>!x.IsDeleted).AsQueryable();
+
+                    if (model.Priority.HasValue)
+                        query = query.Where(t => t.Priority.Equals(model.Priority.Value));
+
+                    if (model.Colour.HasValue)
+                        query = query.Where(t => t.Colour.Equals(model.Colour.Value));
+                    
+                    if (!string.IsNullOrEmpty(model.Tag)) 
+                        query = query.Where(t=>t.Tags.Any(tt=>tt.Tag.Equals(model.Tag)));
+
+
+                    result.Success = true;
+                    result.Count = await query.CountAsync();
+                }
+                catch (Exception e)
+                {
+                    result.Error.Append(e.Message);
+                }
+
+                return result;
+            }
+
+            public async Task<RemoveTagFromTodoResult> RemoveTagFromTodo(RemoveTagFromTodoModel model)
             {
                 var result = new RemoveTagFromTodoResult();
                 
@@ -300,14 +331,14 @@ namespace Todo.Service.Services
                 return result;
             }
 
-            public SearchTodoResult SearchTodo(string text)
+            public async Task<SearchTodoResult> SearchTodo(string text)
             {
                 var result = new SearchTodoResult();
 
                 try
                 {
-                    var todos = _dbContext.Todos.Where(t => t.Description.Contains(text) || t.Title.Contains(text))
-                        .ToList().Take(10);
+                    var todos = await _dbContext.Todos.Where(t => (t.Description.Contains(text) || t.Title.Contains(text)) && !t.IsDeleted)
+                        .Take(10).ToListAsync();
 
                     result.Success = true;
                     result.Todos = todos;
@@ -319,6 +350,39 @@ namespace Todo.Service.Services
 
                 return result;
             }
+
+            public async Task<CompletedTodoResult> CompletedTodo(long id)
+            {
+                var result = new CompletedTodoResult();
+
+                try
+                {
+                    var todo =await _dbContext.Todos.FirstOrDefaultAsync(t => t.Id == id && !t.IsDeleted);
+
+                    if (todo == null)
+                    {
+                        result.NotFound = true;
+                        return result;
+                    }
+
+                    todo.UpdatedAt = DateTime.Now;
+                    todo.IsCompleted = true;
+
+                    _dbContext.Todos.Update(todo);
+                    await _dbContext.SaveChangesAsync();
+                    
+                    result.Todo = todo;
+                    result.Success = true;
+
+                }
+                catch (Exception e)
+                {
+                    result.Error.Append(e.Message);
+                }
+
+                return result;
+            }
+
             private List<TagEntity> Tags(long[] ids)
             {
                 List<TagEntity> tags =  new List<TagEntity>();

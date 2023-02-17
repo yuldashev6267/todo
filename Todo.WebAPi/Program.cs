@@ -31,7 +31,6 @@ namespace Todo.WebAPi
             // Services
             builder.Services.AddScoped<ITodo, Service.Services.TodoService>();
             builder.Services.AddScoped<ITags, Service.Services.Tags>();
-            
             // Swagger
             builder.Services.AddSwaggerGen(c =>
             {

@@ -82,6 +82,25 @@ namespace Todo.Service.Models
         
         public Colour? Colour { get; set; }
     }
-    
+
+    public class CompletedTodoResult : BaseResultModel
+    {
+        public TodoEntity Todo { get; set; }
+        
+        public   bool NotFound { get; set; }
+    }
+
+    public class GetAllCountResult : BaseResultModel
+    {   
+        public int Count { get; set; }
+    }
+
+    public class GetAllCountModel
+    {
+        public bool Desc { get; set; }
+        public string? Tag { get; set; }
+        public Priority? Priority { get; set; }
+        public Colour? Colour { get; set; }
+    }
 }
 

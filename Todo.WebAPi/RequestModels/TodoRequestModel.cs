@@ -22,8 +22,6 @@ namespace Todo.WebAPi.RequestModels
 
     public class GetAllRequestModel
     {
-        public string Sort { get; set; }
-        
         public bool Desc { get; set; }
         
         public string? Tag { get; set; }
