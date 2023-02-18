@@ -17,7 +17,8 @@ namespace Todo.WebAPi.RequestModels
         
         [EnumDataType(typeof(Priority), ErrorMessage = "Priority type not found")]
         public Priority? Priority { get; set; }
-        public long[] TagIds { get; set; }
+        
+        public string[] Tags { get; set; }
     }
 
     public class GetAllRequestModel
@@ -55,6 +56,10 @@ namespace Todo.WebAPi.RequestModels
         
         [JsonPropertyName("priority")]
         public Priority? Priority { get; set; }
+
+        [JsonPropertyName("tags")]
+        public string[] Tags { get; set; }
+
     }
 }
 

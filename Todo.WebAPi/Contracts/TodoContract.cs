@@ -29,12 +29,12 @@ namespace Todo.WebAPi.Contracts
         [JsonPropertyName("color")] public  string Color { get; set; }
         
         [JsonPropertyName("tags")]
-        public IEnumerable<TagContract> Tags { get; set; }
+        public List<TagContract> Tags { get; set; }
 
         public static TodoContract ConvertEntityToContract(TodoEntity todo)
         {
             var contract = new TodoContract();
-            
+            List<TagContract> tags = new List<TagContract>();
             contract.Id = todo.Id;
             contract.CreatedAt = todo.CreatedAt.ConvertToDateTime();
             contract.UpdatedAt = todo.UpdatedAt.ConvertToDateTime();
@@ -45,8 +45,9 @@ namespace Todo.WebAPi.Contracts
             contract.Description = todo.Description;
             contract.PriorityLevel = ConvertPriorityToString(todo.Priority);
             contract.Color = ConvertColourToString(todo.Colour);
+            contract.Tags = todo.Tags?.Select(TagContract.TagContractFromEntity).ToList();
             
-
+            
             return contract;
         }
 

@@ -36,8 +36,7 @@ namespace Todo.Database.Entity
         public string Description { get; set; }
 
         [Column("colour")] public Colour Colour { get; set; } = Core.Colour.Blue;
-        
-        public ICollection<TagEntity> Tags { get; set; }
+        public ICollection<TagEntity>? Tags { get; set; }
     }    
 }
 

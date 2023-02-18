@@ -20,11 +20,18 @@ namespace Todo.Service.Models
         public TagEntity Tag { get; set; }
     }
 
-    public class EditTodoResult : BaseResultModel
+    public class GetTagByNameResult : BaseResultModel
     {
         public bool NotFound { get; set; }
         
-        public TodoEntity Todo { get; set; }
+        public TagEntity Tag { get; set; }
+    }
+
+    public class EditTagResult: BaseResultModel
+    {
+        public bool NotFound { get; set; }
+        
+        public TagEntity Tag { get; set; }
     }
 }
 

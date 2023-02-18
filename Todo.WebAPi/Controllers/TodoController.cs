@@ -31,7 +31,7 @@ namespace Todo.WebAPi.Controllers
                 Description = model.Description,
                 Colour = model.Colour.HasValue ? model.Colour.Value : null,
                 Priority = model.Priority.HasValue ? model.Priority.Value : null,
-                TagIds = model.TagIds
+                Tags = model.Tags
             });
 
             if (result.Success)
@@ -127,7 +127,8 @@ namespace Todo.WebAPi.Controllers
                 Title = requestModel.Title,
                 Description = requestModel.Description,
                 Colour = requestModel.Colour.HasValue ? requestModel.Colour.Value : null,
-                Priority = requestModel.Priority.HasValue ? requestModel.Priority.Value : null
+                Priority = requestModel.Priority.HasValue ? requestModel.Priority.Value : null,
+                Tags = requestModel.Tags
             });
 
             if (result.Success)

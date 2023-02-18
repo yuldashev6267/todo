@@ -17,12 +17,12 @@ namespace Todo.WebAPi.Controllers
 
         [HttpPost]
         [Route("api/create/tag")]
-        public ActionResult Create(CreateTagRequestModel model)
+        public async Task<ActionResult> Create(CreateTagRequestModel model)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
             
-            var result = _tags.AddTag(new AddTagModel()
+            var result = await _tags.AddTag(new AddTagModel()
             {
                 Tag = model.Tag
             });
