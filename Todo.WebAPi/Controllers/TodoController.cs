@@ -69,7 +69,7 @@ namespace Todo.WebAPi.Controllers
 
         [HttpGet]
         [Route("api/get/all")]
-        public async Task<IActionResult> Get([FromQuery] GetAllRequestModel model)
+        public async Task<IActionResult> GetAll([FromQuery] GetAllRequestModel model)
         {
             var result = await _todo.GetAll(new GetAllModel()
             {

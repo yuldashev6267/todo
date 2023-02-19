@@ -12,6 +12,7 @@
           "Microsoft.EntityFrameworkCore.InMemory": "7.0.3",
           "Microsoft.NET.Test.Sdk": "17.1.0",
           "Moq": "4.16.1",
+          "Todo.Service": "1.0.0",
           "Todo.WebAPi": "1.0.0",
           "coverlet.collector": "3.1.2",
           "xunit": "2.4.1",

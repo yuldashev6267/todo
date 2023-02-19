@@ -15,8 +15,7 @@ namespace Todo.Service.Services
         Task<GetTagByNameResult> GetTagByName(string name);
 
         Task<EditTagResult> EditTag(long id);
-    } 
-    
+    }
     public class Tags : ITags
     {
         private readonly DatabaseContext _dbContext;

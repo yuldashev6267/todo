@@ -25,7 +25,12 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Todo.WebAPi\Todo.WebAPi.csproj" />
+        <ProjectReference Include="..\Todo.WebAPi\Todo.WebAPi.csproj" />
+        <ProjectReference Include="..\Todo.Service\Todo.Service.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Systems\Controller" />
     </ItemGroup>
 
 </Project>

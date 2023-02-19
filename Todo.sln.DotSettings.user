@@ -1,5 +1,25 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=c10b0015_002D7b27_002D4a1a_002D8b60_002De36d0ab10b2a/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Test1" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=92089db8_002D9f04_002D41e0_002D883e_002De9c2d8872f87/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Test_1" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::70DB4FF5-8050-498E-82A5-7497A7C7EE2A::net6.0::Todo.Tests.TodoTest.GetAll_TestCorrectCount&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::70DB4FF5-8050-498E-82A5-7497A7C7EE2A::net6.0::Todo.Tests.TagTests.Get_OnSuccess_ReturnsTodo&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::70DB4FF5-8050-498E-82A5-7497A7C7EE2A::net6.0::Todo.Tests.TagTests.GetTagById_OnSuccess_ReturnsTag&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::70DB4FF5-8050-498E-82A5-7497A7C7EE2A::net6.0::Todo.Tests.TagTests.GetTagByName_OnSuccess_ReturnsTag&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::70DB4FF5-8050-498E-82A5-7497A7C7EE2A::net6.0::Todo.Tests.TodoTest.GetAll_OnSuccess_ReturnsAllTodoCount&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::70DB4FF5-8050-498E-82A5-7497A7C7EE2A::net6.0::Todo.Tests.TodoTest.CreateTodo_OnSuccess_ReturnsResult&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=96c411b4_002Db607_002D4acf_002D944f_002D120feaab505a/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="TodoTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::70DB4FF5-8050-498E-82A5-7497A7C7EE2A::net6.0::Todo.Tests.TodoTest&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=bb757864_002D94aa_002D4364_002Dbfba_002D63ec8d7e18a5/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="TodoTest #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::70DB4FF5-8050-498E-82A5-7497A7C7EE2A::net6.0::Todo.Tests.TodoTest&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=c10b0015_002D7b27_002D4a1a_002D8b60_002De36d0ab10b2a/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Test1" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;xUnit::70DB4FF5-8050-498E-82A5-7497A7C7EE2A::net6.0::Todo.Tests.TodoTest&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
